@@ -60,11 +60,12 @@ int main() {
 	char start;
 	int pozicia, pozicia2;
 
+	zaciatok:
 	uvod.open("uvod.txt");
 	cout << uvod.rdbuf();
 	uvod.close();
-
 	cout << endl;
+
 	cin >> start;
 	switch (start)
 	{
@@ -104,7 +105,7 @@ int main() {
 				if (utok(pozicia, pozicia2))
 				{
 					system("CLS");
-					cout << "Trafil si sa" << endl;
+					cout << "Trafil si lod!" << endl;
 					cout << "Pocet lodi je: " << pocetLodi() << endl;
 					cout << "----------------" << endl;
 
@@ -113,7 +114,7 @@ int main() {
 				else 
 				{
 					system("CLS");
-					cout << "Netrafil si sa" << endl;
+					cout << "Netrafil si!" << endl;
 					cout << "Pocet lodi je: " << pocetLodi() << endl;
 					cout << "----------------" << endl; 
 				}	 
@@ -129,6 +130,8 @@ int main() {
 
 			system("CLS");
 			cout << "Gratulujem vyhral si!\n";
+			cout << "Tvoj pocet pokusov si mozes pozriet v pokusy.txt\n";
+			cout << "------------------------------------------------\n";
 			Rozhodnutie:
 			cout << "Chces pokracovat?\n";
 			cout << "1.Ano\n" << "2.Nie\n";
@@ -155,6 +158,10 @@ int main() {
 		break;
 	case '2':
 		return 0;
+		break;
+	default:
+		system("CLS");
+		goto zaciatok;
 		break;
 	}
 }
